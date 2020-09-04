@@ -1,0 +1,27 @@
+Instalación de Python en Linux
+
+apt-get update -y
+apt-get install -y python3.6
+apt-get install -y python3.6-dev
+apt-get install -y python3.6-distutils
+
+
+## Verificación de la descarga
+
+1. Correr `python3 --version`
+2. Correr `pip3 --version`
+
+
+## Entorno virtual
+
+1. Correr python3 -m venv ENTORNO donde `ENTORNO` sea el nombre deseado
+2. Correr source ENTORNO/bin/activate para activar el entorno
+3. Correr deactivate para desactivar el entorno
+
+## Instalación de django
+
+1. Activar entorno virtual
+2. Correr pip install django -U}
+
+
+
