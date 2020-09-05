@@ -1,4 +1,4 @@
-Instalación de Python en Linux
+---------------Instalación de Python en Linux---------------
 
 apt-get update -y
 apt-get install -y python3.6
@@ -22,6 +22,13 @@ apt-get install -y python3.6-distutils
 
 1. Activar entorno virtual
 2. Correr pip install django -U}
+
+--------------- Creación del proyecto "Platzigram" / tu primer Hola, mundo! en Django---------------
+comando 'django-admin': Es una interfaz con el framework de django que nos permite ejecutar otro sub-comandos.
+comando 'django-admin startproject nombre_proyect path: comando para crear un nuevo proyecto, 
+	ejemplo:
+		django-admin startproject platzigram . 
+		##el "." significa que se creará en la ruta actual.
 
 
 
