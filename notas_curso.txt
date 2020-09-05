@@ -60,4 +60,23 @@ Estructura de Archivos:
     El archivo manage.py es uno que no se debe tocar y permite ejecutar todos los comandos que se hayan definido en las applicaciones instaladas del proyecto (entre ellas las del comando django-admin).
         Cuando se ejecuta python3 manage.py por cada [nombre_app] se visualizarán los diferentes comandos que se pueden ejecutar por cada aplicación instalada del proyecto (auth, contenttypes, django, sessions, staticfiles).
 
+debugger:
+    para la ejecución de nuestro programa hasta que nosotros le digamos que continue (presionando la tecla c)
+    import pdb; pdb.set_trace()
+
+pasar argumentros a través de la URL:
+    ejemplo:
+        http://localhost:8000/hi/?numbers=10,4,15,32
+        se utiliza el caracter '?' para pasar argumentos
+
+    otra forma de pasar argumentos es definiendo los argumentos que vas a recibir desde tu path en urls.py
+    ejemplo:
+        path('hi/<str:name>/<int:age>/', views.say_hi),
+        y se pasarian de la siguiente manera en el url:
+        http://localhost:8000/hi/Yiri/11/
+
+-----------------------Creación de Aplicaciones------------------
+La manera de crear una aplicación dentro de Django es usando el comando manage.py startapp seguido del nombre de la aplicación que queremos crear
+ejemplo:
+    python3 manage.py startapp nombre_app
 
