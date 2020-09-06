@@ -21,7 +21,7 @@ apt-get install -y python3.6-distutils
 ## Instalación de django
 
 1. Activar entorno virtual
-2. Correr pip install django -U}
+2. Correr pip install django -U
 
 --------------- Creación del proyecto "Platzigram" / tu primer Hola, mundo! en Django---------------
 comando 'django-admin': Es una interfaz con el framework de django que nos permite ejecutar otro sub-comandos.
