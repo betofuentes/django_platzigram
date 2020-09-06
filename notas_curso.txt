@@ -1,4 +1,4 @@
----------------Instalación de Python en Linux---------------
+---------------Instalación de Python, pip y Django en Linux---------------
 
 apt-get update -y
 apt-get install -y python3.6
@@ -80,3 +80,44 @@ La manera de crear una aplicación dentro de Django es usando el comando manage.
 ejemplo:
     python3 manage.py startapp nombre_app
 
+Las apps se definen en el archivo settings.py
+--------------------- Template system ---------------------
+Es una manera de presentar los datos usando HTML
+    repaso:
+        URL's; Son las encargadas de encontrar el recurso
+        views: Encargada de la lógica de traer los datos
+    Entonces el template es lo que se encarga de la lógica de presentar los datos
+
+Los templates se definen en el archivo settings.py 
+Para comenzar a usar los templates tienes que crear una carpeta "templates" dentro de la carpeta de tu aplicación
+
+Dentro de los templates podemos escribir lógica de python, para hacerlo hay que escribir entre llaves y signos de porcentaje.
+    Ejemplo:
+        {% for post in posts %}
+            <p>{{post.title}}</p>
+        {% endfor %}
+        Notas del ejemplo:
+            Los valores de tus variables en tu vista se pasan a través de doble llave
+            Los ciclos e if tienen que ser terminados 
+    
+    Ejemplo más completo con bootstrap:
+    #Este ejemplo recorre un diccionario "posts" para mostrar sus valores.
+        <div class="container">
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-lg-4 offset-lg-4">
+                    <div class="media">
+                        <img class="mr-3 rounded-circle" src="{{post.user.picture}}" alt="post.user.name">
+                        <div class="media-body">
+                            <h5 class="mt-0">{{post.user.name}}</h5>
+                            {{post.timestamp}}
+                        </div>
+                    </div>
+                    <img class="img-fluid mt-3 border rounded" src="{{post.photo}}" alt="post.title">
+                    <h6 class="ml-1 mt-1">{{ post.title }}</h6>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+--------------------------Patrones de diseño y Django--------------------------
