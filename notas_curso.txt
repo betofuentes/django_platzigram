@@ -121,3 +121,20 @@ Dentro de los templates podemos escribir lógica de python, para hacerlo hay que
     </div>
 
 --------------------------Patrones de diseño y Django--------------------------
+Soluciones reutilizables para un problema común.
+
+Model template view:
+Model: Define la estructura de los datos
+Template: Lógica de presentación de datos
+View: Encargado de traer los datos y pasarlos al template
+    MTV => MVC:
+        Views + Urls => Controller
+        Templates => View
+        Models => Model
+
+------------------------- Migraciones en nuestra base de datos -------------------------
+Para correr los cambios que existen y no se han ejecutado los cambios de las migraciones en nuestra base dedatos corremos el siguiente comando:
+ python3 manage.py migrate
+
+makemigrations: va a buscar los cambios en los modelos y los va a reflejar en un archivo.
+migrate: Va a aplicar los cambios de makemigrations en nuestra base de datos.
