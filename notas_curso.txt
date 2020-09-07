@@ -138,3 +138,66 @@ Para correr los cambios que existen y no se han ejecutado los cambios de las mig
 
 makemigrations: va a buscar los cambios en los modelos y los va a reflejar en un archivo.
 migrate: Va a aplicar los cambios de makemigrations en nuestra base de datos.
+
+------------------------ El ORM de python -------------------------
+La manera de grabar datos en nuestro modelo es utilizando la abstracción de clases.
+
+Para acceder al shell de python con las librerias de  Django se utiliza el siguiente comando:
+python3 manage.py shell
+
+guardar datos al modelo utilizando create:
+    #Donde User es la clase, anteriormente se tuvo que importar con from posts.models import User
+    miguel = User.objects.create(
+        email='hola@gmail.com',
+        password='123456',
+        first_name='Miguel',
+        last_name='Valdez'
+    )
+
+para actualizar valores se puede actualizar desde la clase y posteriormente correr 'save()'
+
+Otra manera de crear datos es instanciando la clase.
+    Ejemplo:
+    #El metodo save guarda los datos de tu instancia en el modelo
+    sesitar = User()
+    sesitar.first_name = 'Cesar'
+    sesitar.last_name = 'Yamamoto'
+    sesitar.save()
+
+*** NOTA: Para elimiar datos del modelo se utiliza el metodo .delete()
+
+Query patra consultar todos los objetos de una tabla:
+>>> usuarios = User.objects.all()
+>>> usuarios
+
+query para consultar solo un objeto:
+>>> usuario = User.objects.get(email='hola@gmail.com')
+>>> usuario
+
+*** NOTA: Se utiliza filter() para traer varios objetos que coincidan con un filtro, por ejemplo objeto = Clase.objetcs.filter(email__endswith='@gmail.com')
+        *********** Para más información revisar documentación*********
+        https://docs.djangoproject.com/en/3.1/topics/db/queries/
+
+
+++++++++++++++++++++ GLOSARIO ++++++++++++++++++++++
+    ORM: Object-relational mapping. Es el encargado de permitir
+    el acceso y control de una base de datos relacional a través de
+    una abstracción a clases y objetos.
+
+    Templates: Archivos HTML que permiten la inclusión y ejecución
+    de lógica especial para la presentación de datos.
+
+    Modelo: Parte de un proyecto de Django que se encarga de estructurar
+    las tablas y propiedades de la base de datos a través de clases de Python.
+
+    Vista: Parte de un proyecto de Django que se encarga de la
+    lógica de negocio y es la conexión entre el template y el modelo.
+
+    App: Conjunto de código que se encarga de resolver una parte
+    muy específica del proyecto, contiene sus modelos, vistas, urls, etc.
+
+    Patrón de diseño: Solución común a un problema particular.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
